@@ -1,1 +1,2 @@
-Next element matching (regexp): 
+#!/bin/bash
+grep root /etc/passwd
