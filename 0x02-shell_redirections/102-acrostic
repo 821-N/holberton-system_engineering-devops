@@ -1,2 +1,2 @@
 #!/bin/bash
-cut -b1
+cut -b1 /etc/passwd | fmt | tr -d  " "
