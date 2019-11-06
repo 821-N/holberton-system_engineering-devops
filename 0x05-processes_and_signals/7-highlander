@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# print
+function hurk {
+	echo "I am invincible!!!"
+}
+trap hurk SIGTERM
+
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
