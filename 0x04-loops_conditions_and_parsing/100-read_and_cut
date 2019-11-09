@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# gets info from /etc/passwd
+i=0
+while [ $i -lt 1 ]
+do
+cut -d: -f1,3,6  < /etc/passwd
+i=$((i+1))
+done
