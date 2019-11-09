@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 # print each file without the leading "number-"
+for _ in {1..1}
+do
 find . | cut -b2- | cut -d- -f2- -s
+done
