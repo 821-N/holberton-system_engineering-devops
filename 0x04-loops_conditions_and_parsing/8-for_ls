@@ -2,5 +2,5 @@
 # print each file without the leading "number-"
 for _ in {1..1}
 do
-find . | cut -b2- | cut -d- -f2- -s
+find . | tail -n+2 | cut -b3- | cut -d- -f2-
 done
