@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # heck
 
 service apache2 start
