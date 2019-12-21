@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # heck
 
+sudo apt-get -y update
+sudo apt-get -y install apache2
 echo "ServerName localhost" >> /etc/apache2/apache2.conf
 sudo service apache2 restart
