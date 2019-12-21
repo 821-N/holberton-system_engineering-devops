@@ -6,7 +6,7 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 
 sudo ufw allow "Nginx HTTP"
-echo "<marquee>welcome to hell</marquee>" | sudo tee -a /var/www/html/404.html
+echo "<marquee data-lol=\"Ceci n'est pas une page\">welcome to hell</marquee>" | sudo tee -a /var/www/html/404.html
 cd /etc/nginx/sites-available/ || exit
 sudo sed -i "s!server_name _;!server_name _;\n\terror_page 404 /404.html;!" default
 sudo service nginx restart
