@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# display active ips
+
+ifconfig | grep -oP 'inet (\d+\.){3}\d+' | cut -b6-
