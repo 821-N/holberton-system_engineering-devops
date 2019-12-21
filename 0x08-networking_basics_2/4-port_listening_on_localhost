@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# hi
+
+nc -l -p 98
