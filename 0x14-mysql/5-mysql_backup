@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # create a backup
 
-sudo mysqldump -uroot -p"$1" > backup.sql
+sudo mysqldump -uroot -p"$1" | sudo tee backup.sql
 
-tar -czvf $(date +%d-%m-%Y).tar.gz backup.sql
+sudo tar -czvf "$(date +%d-%m-%Y)".tar.gz backup.sql
