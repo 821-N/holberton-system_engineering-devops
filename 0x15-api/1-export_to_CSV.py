@@ -18,5 +18,5 @@ if __name__ == "__main__":
         todos = get("todos?userId="+id)
         for item in todos:
             file.write('"{}","{}","{}","{}"\n'.format(
-                id, user['name'], item['completed'], item['title']
+                id, user['username'], item['completed'], item['title']
             ))
