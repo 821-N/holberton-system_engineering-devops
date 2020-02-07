@@ -25,5 +25,7 @@ def recurse(r, words, counts={}, after=None):
     after = data.get("after", None)
     if after:
         return recurse(r, words, counts, after)
-    for word, count in sorted(counts.items()):
-        print(word+":", count)
+    for word, num in sorted(counts.items(), key=lambda x: x[1], reverse=True):
+        print(word+":", num)
+
+recurse("programming", "python java javascript scala no_results_for_this_one")
