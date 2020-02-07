@@ -5,7 +5,7 @@
 import requests
 
 
-def recurse(r, words, counts={}, after=None):
+def count_words(r, words, counts={}, after=None):
     """ search words """
     if type(words) == str:
         words = words.lower().split(" ")
@@ -24,6 +24,6 @@ def recurse(r, words, counts={}, after=None):
             counts[word] = counts.get(word, 0) + count
     after = data.get("after", None)
     if after:
-        return recurse(r, words, counts, after)
+        return count_words(r, words, counts, after)
     for word, num in sorted(counts.items(), key=lambda x: x[1], reverse=True):
         print(word+":", num)
