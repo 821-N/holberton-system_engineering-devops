@@ -16,10 +16,12 @@ def recurse(r, words, counts={}, after=None):
     )
     data = response.json().get("data", {})
     for word in words:
-        counts[word] = counts.get(word, 0) + sum(
+        count = sum(
             post["data"]["title"].lower().count(word)
             for post in data.get("children", [])
         )
+        if count:
+            counts[word] = counts.get(word, 0) + count
     after = data.get("after", None)
     if after:
         return recurse(r, words, counts, after)
