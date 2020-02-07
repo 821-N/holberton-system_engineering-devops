@@ -8,7 +8,7 @@ import requests
 def recurse(r, words, counts={}, after=None):
     """ search words """
     if type(words) == str:
-        words = " ".split(words.lower())
+        words = words.lower().split(" ")
     response = requests.get(
         "https://reddit.com/r/"+r+"/hot.json",
         headers={"User-Agent": "Mozzila/5.0"},
@@ -21,7 +21,7 @@ def recurse(r, words, counts={}, after=None):
             for post in data.get("children", [])
         )
     after = data.get("after", None)
-    if not after:
-        return counts or None
-
-    return recurse(r, words, counts, after)
+    if after:
+        return recurse(r, words, counts, after)
+    for word, count in sorted(counts.items()):
+        print(word+":", count)
